@@ -1,4 +1,2 @@
-github.com/koron-go/srcdom v0.0.0-20200528083806-bd86e495daae h1:ub/GWjn1ouoBy6IpZkddFWf+EkD/jTZJk95StciATD4=
-github.com/koron-go/srcdom v0.0.0-20200528083806-bd86e495daae/go.mod h1:q3GCS3vKYVFOePc+/yResMpuBOsuJ4k48hsnlagfJ1E=
-github.com/koron-go/srcdom v0.1.0 h1:ZxQAwiJaSqAi7P8kdK7BjMxH1fGKNjNl7473IUHWDtk=
-github.com/koron-go/srcdom v0.1.0/go.mod h1:q3GCS3vKYVFOePc+/yResMpuBOsuJ4k48hsnlagfJ1E=
+github.com/koron-go/srcdom v0.2.0 h1:6/VPfJgf1Q3vuSDwV2mxaY0UxxQ30dhbQGedNb5I8vo=
+github.com/koron-go/srcdom v0.2.0/go.mod h1:q3GCS3vKYVFOePc+/yResMpuBOsuJ4k48hsnlagfJ1E=

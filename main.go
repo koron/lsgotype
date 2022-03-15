@@ -44,7 +44,7 @@ func (w *walker) walk(path string, info os.FileInfo, err error) error {
 		return err
 	}
 	if info != nil && info.IsDir() {
-		return w.walkDir(path, info, err)
+		return w.walkDir(path, info)
 	}
 	return nil
 }
@@ -53,7 +53,7 @@ func (w *walker) ignoreTests(info os.FileInfo) bool {
 	return !strings.HasSuffix(info.Name(), "_test.go")
 }
 
-func (w *walker) walkDir(path string, info os.FileInfo, err error) error {
+func (w *walker) walkDir(path string, info os.FileInfo) error {
 	switch info.Name() {
 	case "internal", "testdata", "vendor":
 		return filepath.SkipDir
@@ -182,29 +182,6 @@ func (w *walker) genVimSyntax(path, name string, pkg *srcdom.Package) error {
 	b.WriteString(`\)\>/`)
 	fmt.Println(b.String())
 	return nil
-}
-
-func (w *walker) countPublic(p *srcdom.Package) int {
-	if p == nil {
-		return 0
-	}
-	cnt := 0
-	for _, typ := range p.Types {
-		if typ.IsPublic() {
-			cnt++
-		}
-	}
-	for _, fn := range p.Funcs {
-		if fn.IsPublic() {
-			cnt++
-		}
-	}
-	for _, v := range p.Values {
-		if v.IsPublic() {
-			cnt++
-		}
-	}
-	return cnt
 }
 
 func run(ctx context.Context) error {
